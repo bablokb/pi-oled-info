@@ -1,0 +1,22 @@
+# --------------------------------------------------------------------------
+# Systemd service Definition for pi-oled-info.service.
+#
+# The service starts the script /usr/local/bin/pi-oled-info.py
+#
+# Author: Bernhard Bablok
+# License: GPL3
+#
+# Website: https://github.com/bablokb/pi-oled-info
+#
+# --------------------------------------------------------------------------
+
+[Unit]
+Description=Display system-status on min-oled screen
+After=multi-user.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/pi-oled-info.py
+
+[Install]
+WantedBy=multi-user.target
